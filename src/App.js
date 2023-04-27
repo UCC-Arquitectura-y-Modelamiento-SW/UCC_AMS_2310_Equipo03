@@ -2,19 +2,6 @@ import './App.css';
 import axios from 'axios'
 import { useState, useEffect } from 'react';
 
-/*
-https://gateway.marvel.com:443/v1/public/creators?apikey=dcc75992fb47267a4923e97235321ed9
-
-key public  = dcc75992fb47267a4923e97235321ed9
-key private = 58199dcde7964808bcec88e6674de503bb56ede5
-ts = 1
-
-158199dcde7964808bcec88e6674de503bb56ede5dcc75992fb47267a4923e97235321ed9
-
-hash ccd1b7e46c5461b95d269c39e57f3e37
-
- */  
-
 function App() {
 
   const [creadores, setCreadores]=useState([])
