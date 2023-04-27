@@ -1,24 +1,59 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
+import { useState, useEffect } from 'react';
+
+/*
+https://gateway.marvel.com:443/v1/public/creators?apikey=dcc75992fb47267a4923e97235321ed9
+
+key public  = dcc75992fb47267a4923e97235321ed9
+key private = 58199dcde7964808bcec88e6674de503bb56ede5
+ts = 1
+
+158199dcde7964808bcec88e6674de503bb56ede5dcc75992fb47267a4923e97235321ed9
+
+hash ccd1b7e46c5461b95d269c39e57f3e37
+
+ */  
 
 function App() {
+
+  const [creadores, setCreadores]=useState([])
+
+  useEffect(()=> {
+    axios.get('https://gateway.marvel.com:443/v1/public/creators?ts=1&apikey=dcc75992fb47267a4923e97235321ed9&hash=ccd1b7e46c5461b95d269c39e57f3e37').then(res=>{
+        setCreadores(res.data.data.results)
+    }).catch(error=>console.log(error))
+  },[])
+
+
+  console.log(creadores)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <h1>Lista de Creadores de Marvel</h1>
+        <div className="row">
+          {creadores.map(creador => (
+            <div key={creador.id} className="col-md-6 col-lg-4">
+              <div className="card mb-3">
+                <img src={creador.thumbnail.path + "." + creador.thumbnail.extension} className="card-img-top" alt={creador.fullName} />
+                <div className="card-body">
+                  <h5 className="card-title">{creador.fullName}</h5>
+                  <ul className="list-group list-group-flush">
+                    {creador.comics.items.map((comic, index) => (
+                      <li key={index} className="list-group-item">
+                        <a href={comic.resourceURI}>{comic.name}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
+
   );
 }
 
