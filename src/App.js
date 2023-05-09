@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
+import { useState, useEffect } from 'react';
 
 function App() {
+  /*const [personajes, setPersonajes] =useState([])*/
+  useEffect(()=>{
+    axios.get('https://kgqhzontqtvuylzwsbnxd4tsxi0fintf.lambda-url.us-east-1.on.aws/')
+      .then(response=>{
+        console.log(response.data)
+    })
+    .catch(error=>{
+      console.log(error);
+    });
+  },[]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Marvel</h1>
     </div>
   );
 }
