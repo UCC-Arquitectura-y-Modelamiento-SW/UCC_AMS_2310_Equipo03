@@ -36,3 +36,129 @@
     transform: rotate(360deg);
   }
 }
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.card-text {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.card-text strong {
+  font-weight: bold;
+}
+
+.card-img-top {
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.card-img-top.custom-img {
+  max-width: 200px;
+  max-height: 300px;
+}
+
+#logo {
+  width: 50px;
+  height: auto;
+}
+
+.header {
+  background-color: #202020;
+  height: 5vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+#elem {
+  height: 100%;
+  flex-grow: 1;
+  border: 0.1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#logousu {
+  filter: invert(100%);
+}
+
+.elem1 {
+  width: 50vw;
+}
+
+#text1 {
+  font-size: small;
+  padding-left: 10px;
+}
+
+#text2 {
+  font-size: small;
+}
+
+.header img {
+  height: 30px;
+}
+
+.navbar {
+  font-weight: 500;
+}
+
+.navbar .nav-link {
+  font-size: 18px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+
+.navbar .nav-link:hover {
+  color: red;
+}
+
+.centered-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.bg-marvel {
+  background-color: #202020 !important;
+}
+
+@media (max-width: 991.98px) {
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .header img {
+    height: 20px;
+  }
+
+  .header .logo img {
+    height: 35px;
+  }
+
+  .header .mavel-suscription img {
+    display: none;
+  }
+}
+
+.searchl {
+  cursor: pointer;
+}
