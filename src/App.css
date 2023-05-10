@@ -82,6 +82,36 @@
 
 .header {
   background-color: #202020;
+  height: 5vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+#elem {
+  height: 100%;
+  flex-grow: 1;
+  border: 0.1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#logousu {
+  filter: invert(100%);
+}
+
+.elem1 {
+  width: 50vw;
+}
+
+#text1 {
+  font-size: small;
+  padding-left: 10px;
+}
+
+#text2 {
+  font-size: small;
 }
 
 .header img {
@@ -99,7 +129,12 @@
 }
 
 .navbar .nav-link:hover {
-  color: #ffc107;
+  color: red;
+}
+
+.centered-nav {
+  display: flex;
+  justify-content: center;
 }
 
 .bg-marvel {
@@ -122,4 +157,8 @@
   .header .mavel-suscription img {
     display: none;
   }
+}
+
+.searchl {
+  cursor: pointer;
 }

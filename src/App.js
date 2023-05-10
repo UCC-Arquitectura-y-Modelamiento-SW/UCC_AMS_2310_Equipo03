@@ -21,22 +21,20 @@ function App() {
   return (
     <div className="container-fluid px-0">
       <div className="container-fluid px-0">
-        <div className="header py-3">
-          <div className="row justify-content-between align-items-center mx-0">
-            <div id='elem' className="col-md-auto">
-              <img src={logoUsuario} alt="Logo Usuario" className="img-fluid" />
-              <h1 className="d-inline-block ml-2 mb-0 text-white">KEVIN</h1>
-            </div>
-            <div id='elem' className="col-md-auto d-flex align-items-center">
-              <img src={marvelLogo} alt="Marvel Logo" className="img-fluid" />
-            </div>
-            <div id='elem' className="col-md-auto d-none d-md-block">
-              <img src={marvelSub} alt="Marvel Unlimited Subscribe" className="img-fluid" />
-              <h1 className="d-inline-block ml-2 mb-0 text-white">MARVEL UNLIMITED SUBSCRIBE</h1>
-            </div>
-            <div id='elem' className="col-md-auto d-flex align-items-center justify-content-end">
-              <img src={searchLogo} alt="Search Logo" className="img-fluid" />
-            </div>
+        <div className="header">
+          <div id='elem'>
+            <img id='logousu' src={logoUsuario} alt="Logo Usuario" className="img-fluid" />
+            <h1 id='text1' className="d-inline-block ml-2 mb-0 text-white">KEVIN</h1>
+          </div>
+          <div id='elem' className='elem1'>
+            <img src={marvelLogo} alt="Marvel Logo" className="img-fluid" />
+          </div>
+          <div id='elem'>
+            <img src={marvelSub} alt="Marvel Unlimited Subscribe" className="img-fluid" />
+            <h1 id='text2' className="d-inline-block ml-10 mb-0 text-white">MARVEL UNLIMITED SUBSCRIBE</h1>
+          </div>
+          <div id='elem'>
+            <img id='searchl' src={searchLogo} alt="Search Logo" className="img-fluid" />
           </div>
         </div>
 
@@ -61,7 +59,6 @@ function App() {
           </div>
         </nav>
       </div>
-
       <h1 className="text-center mt-5 mb-5">Marvel Comics</h1>
       <div className="row gx-2 gx-lg-3">
         {comics.map((comic) => (
